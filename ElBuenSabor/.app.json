@@ -14,14 +14,14 @@
           "passwordLabel": "Password",
           "passwordPlaceholder": "Contraseña",
           "signinLabel": "Iniciar",
-          "signinRedirect": "ordenes",
+          "signinRedirect": "guia",
           "enableRegistration": true,
           "gotoRegisterLabel": "Crear Cuenta",
           "registerEmailLabel": "Correo",
           "registerPasswordLabel": "Password",
           "registerNameLabel": "DisplayName",
           "registerLabel": "Registrarme",
-          "registerRedirect": "ordenes",
+          "registerRedirect": "guia",
           "gotoSigninLabel": "Regresar",
           "enableLogout": true,
           "logoutLabel": "Salir",
@@ -497,6 +497,14 @@
       "title": "direcciones",
       "addToNavigation": true,
       "icon": "organize"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "guia",
+      "components": [],
+      "title": "guia",
+      "addToNavigation": true,
+      "icon": "info"
     }
   ],
   "dataProviders": [

@@ -12,8 +12,8 @@ app.home = kendo.observable({
 (function(parent) {
     var provider = app.data.elBuenSabor,
         mode = 'signin',
-        registerRedirect = 'ordenes',
-        signinRedirect = 'ordenes',
+        registerRedirect = 'guia',
+        signinRedirect = 'guia',
         rememberKey = 'elBuenSabor_authData_homeModel',
         init = function(error) {
             if (error) {
