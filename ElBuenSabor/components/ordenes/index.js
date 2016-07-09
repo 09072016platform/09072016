@@ -177,6 +177,9 @@ app.ordenes = kendo.observable({
                 app.mobileApp.navigate('#components/ordenes/details.html?uid=' + dataItem.uid);
 
             },
+            addClick: function() {
+                app.mobileApp.navigate('#components/ordenes/add.html');
+            },
             editClick: function() {
                 var uid = this.originalItem.uid;
                 app.mobileApp.navigate('#components/ordenes/edit.html?uid=' + uid);
@@ -245,6 +248,32 @@ app.ordenes = kendo.observable({
             currentItem: {}
         });
 
+    parent.set('addItemViewModel', kendo.observable({
+        onShow: function(e) {
+            // Reset the form data.
+            this.set('addFormData', {
+                numero: '',
+                estado: '',
+            });
+        },
+        onSaveClick: function(e) {
+            var addFormData = this.get('addFormData'),
+                addModel = {
+                    numero: addFormData.numero,
+                    estado: addFormData.estado,
+                },
+                filter = ordenesModel && ordenesModel.get('paramFilter'),
+                dataSource = ordenesModel.get('dataSource');
+
+            dataSource.add(addModel);
+            dataSource.one('change', function(e) {
+                app.mobileApp.navigate('#:back');
+            });
+
+            dataSource.sync();
+        }
+    }));
+
     parent.set('editItemViewModel', kendo.observable({
         editFormData: {},
         onShow: function(e) {
@@ -255,7 +284,8 @@ app.ordenes = kendo.observable({
 
             this.set('itemData', itemData);
             this.set('editFormData', {
-                deleteAt: itemData.DeletedAt,
+                deletedAt: itemData.DeletedAt,
+                textField: itemData.DeletedAt,
             });
         },
         linkBind: function(linkString) {
@@ -268,7 +298,8 @@ app.ordenes = kendo.observable({
                 dataSource = ordenesModel.get('dataSource');
 
             // prepare edit
-            itemData.set('DeletedAt', editFormData.deleteAt);
+            itemData.set('DeletedAt', editFormData.deletedAt);
+            itemData.set('DeletedAt', editFormData.textField);
 
             dataSource.one('sync', function(e) {
                 app.mobileApp.navigate('#:back');

@@ -3,6 +3,38 @@
   "views": [
     {
       "type": "kendo-ui-mobile:view",
+      "name": "home",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:authentication",
+          "name": "homeModel",
+          "dataProvider": "elBuenSabor",
+          "emailLabel": "correo",
+          "emailPlaceholder": "Correo",
+          "passwordLabel": "Password",
+          "passwordPlaceholder": "Contraseña",
+          "signinLabel": "Iniciar",
+          "signinRedirect": "ordenes",
+          "enableRegistration": true,
+          "gotoRegisterLabel": "Crear Cuenta",
+          "registerEmailLabel": "Correo",
+          "registerPasswordLabel": "Password",
+          "registerNameLabel": "DisplayName",
+          "registerLabel": "Registrarme",
+          "registerRedirect": "ordenes",
+          "gotoSigninLabel": "Regresar",
+          "enableLogout": true,
+          "logoutLabel": "Salir",
+          "enableRememberme": true,
+          "remembermeLabel": "Recordar"
+        }
+      ],
+      "title": "home",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
       "name": "ordenes",
       "components": [
         {
@@ -15,12 +47,48 @@
               "components": [
                 {
                   "type": "kendo-ui-mobile:editableListFormField",
-                  "name": "deleteAt",
+                  "name": "estado",
                   "dataBindingRelationChildren": "[]",
-                  "title": "DeleteAt",
+                  "title": "estado",
                   "inputType": "text",
                   "titlePosition": "left",
-                  "placeholder": "Eliminar",
+                  "placeholder": "estado",
+                  "dataBinding": "estado"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "numero",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "numero",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "numero",
+                  "dataBinding": "numero"
+                }
+              ],
+              "name": "editableListForm101",
+              "formType": "add"
+            },
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "textField",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "Text field",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "DeletedAt"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "deletedAt",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "DeletedAt",
+                  "inputType": "date",
+                  "titlePosition": "left",
                   "dataBinding": "DeletedAt"
                 }
               ],
@@ -43,7 +111,8 @@
           "detailHeaderField": "numero",
           "detailSubHeaderField": "estado",
           "detailDescriptionField": "total",
-          "addItemForm": false,
+          "addItemForm": true,
+          "addScreenHeaderValue": "Hacer pedido",
           "editItemForm": true,
           "editScreenHeaderSource": "dataBound",
           "editScreenHeaderField": "DeletedAt"
@@ -218,37 +287,6 @@
       "title": "usuario",
       "addToNavigation": true,
       "icon": "contacts"
-    },
-    {
-      "type": "kendo-ui-mobile:view",
-      "name": "home",
-      "components": [
-        {
-          "type": "kendo-ui-mobile:authentication",
-          "name": "homeModel",
-          "dataProvider": "elBuenSabor",
-          "emailLabel": "correo",
-          "emailPlaceholder": "Correo",
-          "passwordLabel": "Password",
-          "passwordPlaceholder": "Contraseña",
-          "signinLabel": "Iniciar",
-          "signinRedirect": "ordenes",
-          "enableRegistration": true,
-          "gotoRegisterLabel": "Crear Cuenta",
-          "registerEmailLabel": "Correo",
-          "registerPasswordLabel": "Password",
-          "registerNameLabel": "DisplayName",
-          "registerLabel": "Registrarme",
-          "registerRedirect": "ordenes",
-          "gotoSigninLabel": "Regresar",
-          "enableLogout": true,
-          "logoutLabel": "Salir",
-          "enableRememberme": true,
-          "remembermeLabel": "Recordar"
-        }
-      ],
-      "title": "home",
-      "addToNavigation": false
     },
     {
       "type": "kendo-ui-mobile:view",
