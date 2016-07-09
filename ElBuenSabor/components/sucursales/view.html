@@ -1,0 +1,41 @@
+<div data-role="view" data-title="sucursales" data-layout="main" data-model="app.sucursales" data-show="app.sucursales.onShow" data-after-show="app.sucursales.afterShow">
+
+    <!-- START_CUSTOM_CODE_sucursales -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+    <!-- END_CUSTOM_CODE_sucursales -->
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+            <a data-role="backbutton" data-align="left" class="backButtonWrapper" style="display: none;">Back</a>
+            <span data-role="view-title"></span>
+
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+
+
+        </div>
+    </header>
+
+
+    <ul class="masterDetailView" data-role="listview" data-auto-bind="false" data-style="inset" data-template="sucursalesModelTemplate" data-bind="{ source: sucursalesModel.dataSource, events: {click: sucursalesModel.itemClick} }" data-pull-to-refresh="false"
+    data-endless-scroll="false">
+    </ul>
+
+
+    <!-- START_CUSTOM_CODE_sucursalesModel -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+    <!-- END_CUSTOM_CODE_sucursalesModel -->
+    <script type="text/x-kendo-template" id="sucursalesModelTemplate">
+        <div class="image-with-text">
+            # data = app.sucursales.sucursalesModel.fixHierarchicalData(data); #
+
+            <h3>#: data['nombre'] #</h3>
+            <p>#: data['direccion'] #</p>
+        </div>
+        <div class="editableListItem">
+
+            <div>radio</div>
+            <div>#= data['radio'] #</div>
+        </div>
+    </script>
+</div>

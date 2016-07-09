@@ -3,21 +3,479 @@
   "views": [
     {
       "type": "kendo-ui-mobile:view",
-      "name": "home",
-      "components": [],
-      "title": "Home View",
+      "name": "ordenes",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "deleteAt",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "DeleteAt",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Eliminar",
+                  "dataBinding": "DeletedAt"
+                }
+              ],
+              "name": "editableListForm13",
+              "formType": "edit"
+            }
+          ],
+          "name": "ordenesModel",
+          "dataProvider": "elBuenSabor",
+          "collection": "ordenes",
+          "headerField": "total",
+          "subHeaderField": "estado",
+          "filterField": "numero",
+          "isMapView": false,
+          "pullToRefresh": true,
+          "endlessScroll": true,
+          "deleteItemButton": true,
+          "deleteItemConfirmation": true,
+          "detailHeaderFieldSource": "dataBound",
+          "detailHeaderField": "numero",
+          "detailSubHeaderField": "estado",
+          "detailDescriptionField": "total",
+          "addItemForm": false,
+          "editItemForm": true,
+          "editScreenHeaderSource": "dataBound",
+          "editScreenHeaderField": "DeletedAt"
+        }
+      ],
+      "title": "ordenes",
       "addToNavigation": true,
-      "icon": "home"
+      "icon": "cart"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "sugerencias",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "detalle",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "detalle",
+                  "inputType": "textArea",
+                  "wideFieldTitlePosition": "top",
+                  "dataBinding": "detalle"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "puntuacion",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "puntuacon",
+                  "inputType": "number",
+                  "titlePosition": "left",
+                  "dataBinding": "puntuacion"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "deleteAt",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "DeleteAt",
+                  "inputType": "switch",
+                  "dataBinding": "DeletedAt"
+                }
+              ],
+              "name": "editableListForm19",
+              "formType": "add"
+            },
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "detalle",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "detalle",
+                  "inputType": "textArea",
+                  "wideFieldTitlePosition": "top",
+                  "dataBinding": "detalle"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "deleteAt",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "DeleteAt",
+                  "inputType": "switch",
+                  "dataBinding": "DeletedAt"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "puntuacion",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "puntuacion",
+                  "inputType": "number",
+                  "titlePosition": "left",
+                  "dataBinding": "puntuacion"
+                }
+              ],
+              "name": "editableListForm20",
+              "formType": "edit"
+            }
+          ],
+          "name": "sugerenciasModel",
+          "dataProvider": "elBuenSabor",
+          "collection": "sugerencias",
+          "headerField": "puntuacion",
+          "subHeaderField": "detalle",
+          "isMapView": false,
+          "pullToRefresh": true,
+          "endlessScroll": true,
+          "deleteItemButton": true,
+          "deleteItemConfirmation": true,
+          "detailHeaderFieldSource": "static",
+          "detailHeaderFieldValue": "Detail",
+          "addItemForm": true,
+          "addScreenHeaderValue": "Create",
+          "editItemForm": true,
+          "editScreenHeaderSource": "dataBound",
+          "editScreenHeaderField": "puntuacion"
+        }
+      ],
+      "title": "sugerencias",
+      "addToNavigation": true,
+      "icon": "sounds"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "usuario",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "displayName",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "DisplayName",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Nombre",
+                  "dataBinding": "DisplayName"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "celular",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "celular",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Celular",
+                  "dataBinding": "celular"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "password",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "Password",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Contraseña",
+                  "dataBinding": "Password"
+                }
+              ],
+              "name": "editableListForm31",
+              "formType": "edit"
+            }
+          ],
+          "name": "usuarioModel",
+          "dataProvider": "elBuenSabor",
+          "collection": "Users",
+          "headerField": "DisplayName",
+          "isMapView": false,
+          "pullToRefresh": false,
+          "endlessScroll": false,
+          "deleteItemButton": false,
+          "detailHeaderFieldSource": "static",
+          "detailHeaderFieldValue": "Detail",
+          "addItemForm": false,
+          "editItemForm": true,
+          "editScreenHeaderSource": "static",
+          "editScreenHeaderValue": "Perfil"
+        }
+      ],
+      "title": "usuario",
+      "addToNavigation": true,
+      "icon": "contacts"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "home",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:authentication",
+          "name": "homeModel",
+          "dataProvider": "elBuenSabor",
+          "emailLabel": "correo",
+          "emailPlaceholder": "Correo",
+          "passwordLabel": "Password",
+          "passwordPlaceholder": "Contraseña",
+          "signinLabel": "Iniciar",
+          "signinRedirect": "ordenes",
+          "enableRegistration": true,
+          "gotoRegisterLabel": "Crear Cuenta",
+          "registerEmailLabel": "Correo",
+          "registerPasswordLabel": "Password",
+          "registerNameLabel": "DisplayName",
+          "registerLabel": "Registrarme",
+          "registerRedirect": "ordenes",
+          "gotoSigninLabel": "Regresar",
+          "enableLogout": true,
+          "logoutLabel": "Salir",
+          "enableRememberme": true,
+          "remembermeLabel": "Recordar"
+        }
+      ],
+      "title": "home",
+      "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "platos",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "ingredientes",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "ingredientes",
+                  "inputType": "shortText",
+                  "dataBindingOptional": "ingredientes"
+                }
+              ],
+              "name": "editableListForm39",
+              "formType": "list"
+            }
+          ],
+          "name": "platosModel",
+          "dataProvider": "elBuenSabor",
+          "collection": "platos",
+          "headerField": "nombre",
+          "imageField": "imagen",
+          "subHeaderField": "precio",
+          "filterField": "nombre",
+          "isMapView": false,
+          "pullToRefresh": true,
+          "endlessScroll": true,
+          "deleteItemButton": false,
+          "detailHeaderFieldSource": "static",
+          "detailHeaderFieldValue": "Detail",
+          "addItemForm": false,
+          "editItemForm": false
+        }
+      ],
+      "title": "platos",
+      "addToNavigation": true,
+      "icon": "bookmarks"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "tipos",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [],
+          "name": "tiposModel",
+          "dataProvider": "elBuenSabor",
+          "collection": "tipos",
+          "headerField": "nombre",
+          "isMapView": false,
+          "pullToRefresh": false,
+          "endlessScroll": false,
+          "deleteItemButton": false,
+          "detailHeaderFieldSource": "static",
+          "detailHeaderFieldValue": "Detail",
+          "addItemForm": false,
+          "editItemForm": false
+        }
+      ],
+      "title": "tipos",
+      "addToNavigation": true,
+      "icon": "organize"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "categorias",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [],
+          "name": "categoriasModel",
+          "dataProvider": "elBuenSabor",
+          "collection": "categorias",
+          "headerField": "nombre",
+          "isMapView": false,
+          "pullToRefresh": false,
+          "endlessScroll": false,
+          "deleteItemButton": false,
+          "detailHeaderFieldSource": "static",
+          "detailHeaderFieldValue": "Detail",
+          "addItemForm": false,
+          "editItemForm": false
+        }
+      ],
+      "title": "categorias",
+      "addToNavigation": true,
+      "icon": "organize"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "sucursales",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "radio",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "radio",
+                  "inputType": "shortText",
+                  "dataBindingOptional": "radio"
+                }
+              ],
+              "name": "editableListForm62",
+              "formType": "list"
+            }
+          ],
+          "name": "sucursalesModel",
+          "dataProvider": "elBuenSabor",
+          "collection": "sucursales",
+          "headerField": "nombre",
+          "subHeaderField": "direccion",
+          "isMapView": false,
+          "pullToRefresh": false,
+          "endlessScroll": false,
+          "deleteItemButton": false,
+          "detailHeaderFieldSource": "static",
+          "detailHeaderFieldValue": "Detail",
+          "addItemForm": false,
+          "editItemForm": false
+        }
+      ],
+      "title": "sucursales",
+      "addToNavigation": true,
+      "icon": "organize"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "direcciones",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "components": [
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "direcion",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "direccion",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "Dirección",
+                  "dataBinding": "direccion"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "latitud",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "latitud",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "latitud",
+                  "dataBinding": "latitud"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "longitud",
+                  "dataBindingRelationChildren": "[]",
+                  "title": "longitud",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "placeholder": "longitud",
+                  "dataBinding": "longitud"
+                }
+              ],
+              "name": "editableListForm98",
+              "formType": "add"
+            }
+          ],
+          "name": "direccionesModel",
+          "dataProvider": "elBuenSabor",
+          "collection": "direcciones",
+          "headerField": "direccion",
+          "isMapView": false,
+          "pullToRefresh": false,
+          "endlessScroll": false,
+          "deleteItemButton": false,
+          "detailHeaderFieldSource": "static",
+          "detailDescriptionField": "direccion",
+          "addItemForm": true,
+          "addScreenHeaderValue": "Agregar Dirección",
+          "editItemForm": false
+        }
+      ],
+      "title": "direcciones",
+      "addToNavigation": true,
+      "icon": "organize"
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "kendo-ui-mobile:dataProvider",
+      "name": "elBuenSabor",
+      "title": "ElBuenSabor / ElBuenSabor",
+      "source": "everlive",
+      "everliveKey": "ugs9jcen2c8z0c1s",
+      "offlineStorage": false
+    }
+  ],
   "name": "kendoUiMobileApp",
-  "navigation": "tabstrip",
+  "navigation": "drawer",
   "view": "home",
-  "transition": "slide",
-  "showMoreTab": true,
   "skin": "nova",
-  "skinMainColor": "#32364c",
+  "skinMainColor": "#3f1e55",
   "skinTextColor": "#ffffff",
-  "skinAccentColor": "#ff4350"
+  "skinAccentColor": "#f96944"
 }

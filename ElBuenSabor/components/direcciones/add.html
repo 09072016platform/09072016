@@ -1,0 +1,49 @@
+<div data-role="view" data-title="Add" data-model="app.direcciones.addItemViewModel" data-bind="events: { show: onShow }" id="direccionesModelAddItemView">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+            <span>Agregar Dirección</span>
+            <a data-role="backbutton" data-align="left">Cancel</a>
+            <a data-role="button" data-align="right" data-bind="events: { click: onSaveClick }">Save</a>
+        </div>
+    </header>
+    <!-- START_CUSTOM_CODE_direccionesModel -->
+    <!-- END_CUSTOM_CODE_direccionesModel -->
+    <div id="editableListForm98" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li class="form-content-item">
+
+                    <label>
+
+                        <span>direccion</span>
+
+                        <input id="direcion" data-bind="value: addFormData.direcion" placeholder="Dirección" type="text">
+                    </label>
+
+                </li>
+                <li class="form-content-item">
+
+                    <label>
+
+                        <span>latitud</span>
+
+                        <input id="latitud" data-bind="value: addFormData.latitud" placeholder="latitud" type="text">
+                    </label>
+
+                </li>
+                <li class="form-content-item">
+
+                    <label>
+
+                        <span>longitud</span>
+
+                        <input id="longitud" data-bind="value: addFormData.longitud" placeholder="longitud" type="text">
+                    </label>
+
+                </li>
+            </ul>
+        </form>
+        <!-- START_CUSTOM_CODE_editableListForm98 -->
+        <!-- END_CUSTOM_CODE_editableListForm98 -->
+    </div>
+</div>

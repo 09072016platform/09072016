@@ -13,42 +13,27 @@
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="app.js"></script>
+    <script src="bower_components/everlive/min/everlive.all.min.js"></script>
+    <script src="dataProviders/elBuenSabor.js"></script>
 </head>
 
 <body id="kendoUiMobileApp">
+    <script src="components/direcciones/index.js"></script>
+    <script src="components/sucursales/index.js"></script>
+    <script src="components/categorias/index.js"></script>
+    <script src="components/tipos/index.js"></script>
+    <script src="components/platos/index.js"></script>
     <script src="components/home/index.js"></script>
+    <script src="components/usuario/index.js"></script>
+    <script src="components/sugerencias/index.js"></script>
+    <script src="components/ordenes/index.js"></script>
     <div data-role="layout" data-id="main">
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
+                <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
             </div>
         </header>
-        <footer data-role="footer">
-            <div data-role="tabstrip" id="navigation-container">
-                <a href="components/home/view.html" data-icon="home">Home View</a>
-            </div>
-            <div id="navigation-container-more" style="display: none">
-            </div>
-        </footer>
-    </div>
-
-
-    <div id="navigation-show-more-view">
-        <header class="km-header">
-            <div class="header-text km-widget km-navbar">
-                <div class="km-leftitem">
-                    <a class="km-widget km-button km-back" id="more-view-back">
-                        <span class="km-text">Back</span>
-                    </a>
-                </div>
-                <div class="km-view-title">
-                    <span>Show More</span>
-                </div>
-            </div>
-        </header>
-
-        <ul data-role="listview" data-style="inset" class="km-widget km-listview km-list km-listinset">
-        </ul>
     </div>
 
     <div data-role="layout" data-id="main-nonav">
@@ -57,8 +42,30 @@
                 <span data-role="view-title"></span>
             </div>
         </header>
-        <footer data-role="footer">
-        </footer>
+    </div>
+
+    <div id="appDrawer" data-role="drawer" data-title="Navigation">
+        <header data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+            </div>
+        </header>
+        <ul id="navigation-container" data-role="listview">
+            <li><a href="components/ordenes/view.html" data-icon="cart">ordenes</a></li>
+            <li><a href="components/sugerencias/view.html" data-icon="sounds">sugerencias</a></li>
+            <li><a href="components/usuario/view.html" data-icon="contacts">usuario</a></li>
+
+            <li><a href="components/platos/view.html" data-icon="bookmarks">platos</a></li>
+
+            <li><a href="components/tipos/view.html" data-icon="organize">tipos</a></li>
+
+            <li><a href="components/categorias/view.html" data-icon="organize">categorias</a></li>
+
+            <li><a href="components/sucursales/view.html" data-icon="organize">sucursales</a></li>
+
+            <li><a href="components/direcciones/view.html" data-icon="organize">direcciones</a></li>
+            <li id="homeModellogout"><a href="components/home/view.html?logout=true" data-position="end" data-icon="action">Salir</a></li>
+        </ul>
     </div>
     <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->

@@ -1,0 +1,47 @@
+<div data-role="view" data-title="platos" data-layout="main" data-model="app.platos" data-show="app.platos.onShow" data-after-show="app.platos.afterShow">
+
+    <!-- START_CUSTOM_CODE_platos -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+    <!-- END_CUSTOM_CODE_platos -->
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+            <a data-role="backbutton" data-align="left" class="backButtonWrapper" style="display: none;">Back</a>
+            <span data-role="view-title"></span>
+
+            <a data-role="button" href="#appDrawer" data-rel="drawer" data-align="left" data-icon="drawer-button"></a>
+
+
+        </div>
+    </header>
+
+
+    <!--  Certain features like grouping and inset styling are not supported when endless scroll is enabled. -->
+    <form class="km-filter-form custom-filter">
+        <div class="km-filter-wrap">
+            <input type="search" placeholder="Search..." data-bind="{events:{keyup: platosModel.searchChange}}">
+        </div>
+    </form>
+    <ul class="masterDetailView" data-role="listview" data-auto-bind="false" data-style="" data-template="platosModelTemplate" data-bind="{ source: platosModel.dataSource, events: {click: platosModel.itemClick} }" data-pull-to-refresh="true" data-endless-scroll="true">
+    </ul>
+
+
+    <!-- START_CUSTOM_CODE_platosModel -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+    <!-- END_CUSTOM_CODE_platosModel -->
+    <script type="text/x-kendo-template" id="platosModelTemplate">
+        <div class="image-with-text">
+            # data = app.platos.platosModel.fixHierarchicalData(data); #
+
+            <img src="#: data['imagenUrl'] #">
+            <h3>#: data['nombre'] #</h3>
+            <p>#: data['precio'] #</p>
+        </div>
+        <div class="editableListItem">
+
+            <div>ingredientes</div>
+            <div>#= data['ingredientes'] #</div>
+        </div>
+    </script>
+</div>

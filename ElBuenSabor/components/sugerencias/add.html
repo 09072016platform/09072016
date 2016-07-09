@@ -1,0 +1,47 @@
+<div data-role="view" data-title="Add" data-model="app.sugerencias.addItemViewModel" data-bind="events: { show: onShow }" id="sugerenciasModelAddItemView">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+            <span>Create</span>
+            <a data-role="backbutton" data-align="left">Cancel</a>
+            <a data-role="button" data-align="right" data-bind="events: { click: onSaveClick }">Save</a>
+        </div>
+    </header>
+    <!-- START_CUSTOM_CODE_sugerenciasModel -->
+    <!-- END_CUSTOM_CODE_sugerenciasModel -->
+    <div id="editableListForm19" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li class="form-content-item">
+                    <label class="km-label-above">
+
+                        <span>detalle</span>
+
+                        <textarea rows="7" data-bind="value: addFormData.detalle"></textarea>
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+                    <label>
+
+                        <span>puntuacon</span>
+
+                        <input id="puntuacion" data-bind="value: addFormData.puntuacion" type="number">
+                    </label>
+
+                </li>
+                <li class="form-content-item">
+
+                    <label>
+
+                        <span>DeleteAt</span>
+
+                        <input id="deleteAt" data-bind="value: addFormData.deleteAt" data-role="switch">
+                    </label>
+
+                </li>
+            </ul>
+        </form>
+        <!-- START_CUSTOM_CODE_editableListForm19 -->
+        <!-- END_CUSTOM_CODE_editableListForm19 -->
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<div data-role="view" data-title="Edit" data-model="app.usuario.editItemViewModel" data-bind="events: { show: onShow }" id="usuarioModelEditItemView">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text">
+            <span>Perfil</span>
+            <a data-role="backbutton" data-align="left">Cancel</a>
+            <a data-role="button" data-align="right" data-bind="events: { click: onSaveClick }">Save</a>
+        </div>
+    </header>
+    <!-- START_CUSTOM_CODE_usuarioModel -->
+    <!-- END_CUSTOM_CODE_usuarioModel -->
+    <div id="editableListForm31" class="form-view">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li class="form-content-item">
+
+                    <label>
+
+                        <span>DisplayName</span>
+
+                        <input id="displayName" data-bind="value: editFormData.displayName" placeholder="Nombre" type="text">
+                    </label>
+
+                </li>
+                <li class="form-content-item">
+
+                    <label>
+
+                        <span>celular</span>
+
+                        <input id="celular" data-bind="value: editFormData.celular" placeholder="Celular" type="text">
+                    </label>
+
+                </li>
+                <li class="form-content-item">
+
+                    <label>
+
+                        <span>Password</span>
+
+                        <input id="password" data-bind="value: editFormData.password" placeholder="Contraseña" type="text">
+                    </label>
+
+                </li>
+            </ul>
+        </form>
+        <!-- START_CUSTOM_CODE_editableListForm31 -->
+        <!-- END_CUSTOM_CODE_editableListForm31 -->
+    </div>
+</div>
